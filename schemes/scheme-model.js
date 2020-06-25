@@ -40,6 +40,9 @@ function update(changes, id) {
 }
 
 function remove(id) {
+    if (!id) {
+        return null
+    }
     return db("schemes")
         .where("id", id)
         .del()
